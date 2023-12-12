@@ -20,3 +20,9 @@ to be the most efficient one!
 
 What is the big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
+
+## Answer
+
+The algorithm uses a while loop to iterate through all vertices in the graph, and for each vertex, it performs a linear search to find the vertex with the minimum distance from the source node. In the worst case, this linear search involves checking distances for all vertices in each iteration of the while loop. In this case, the while loop runs for each vertex in the graph ($V$ times), and for each vertex, it checks distances for all vertices again ($V$ times). So a total of $V * V = V^2$ comparisons. In the best case, if the minimum distance is such that the vertex is always found quickly, the while loop still iterates through all vertices once ($V$ times), and for each vertex it checks distances for all vertices ($V$ times), resulting in the same time of $V^2$ comparisons. The outer while loop and inner for loop are the main contributors to this complexity. So the time complexity for both bounds worse case and best case is $O(V^2)$. 
+
+I read that Dijkstra's algorithm can be optimized to $O(V log V)$ using a priorty queue or a min-heap. This might be something I look into for the wildcard assignment. 
